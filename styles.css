@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+    /* Text */
+    --dark-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);
+    /* Background gradient */
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+    /*  Neutral */
+    /* Text */
+    --very-dark-grayish-blue: hsl(273, 12%, 33%);
+    --dark-grayish-blue: hsl(273, 12%, 33%);
+    /* Dividers*/
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+body {
+    background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Kumbh Sans', sans-serif;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+    overflow: hidden;
+}
+
+.attribution { 
+    display: block;
+    position: absolute;
+    font-size: 11px; 
+    text-align: center; 
+    bottom: 5px;
+}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/*===========================CONTAINER ===========================*/
+/*================================================================*/
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 74%;
+    height: 80%;
+    background-color: #fff;
+    border-radius: 20px;
+    z-index: 1;
+}
+/*-------------------------Images-------------------------------*/
+.images {
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+}
+.image-bg-pattern {
+    position: absolute;
+    height: 1080px;
+    z-index: 1;
+}
+.image-bg-pattern2 {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.image-bg-box {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    transform: translate(-98px, 216px);
+    z-index: 100;
+}
+.image-bg-woman {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    transform: translateY(15px);
+    z-index: 5;
+}
+.image-bg-woman2 {
+    position: absolute;
+    display: none;
+    z-index: 5;
+}
+.pattern__image {
+    width: 300px;
+    height: 300px;
+}
+/*-------------------------Content-------------------------------*/
+.content {
+    width: 80%;
+    margin: 55px 30px 30px 0;
+    z-index: 10;
+    color: var(--dark-blue);
+}
+.questions {
+    position: relative;
+    overflow: hidden;
+    color: var(--very-dark-grayish-blue);
+}
+.answer {
+    overflow: hidden;
+    width: 95%;
+    max-height: 0;
+}
+.answer p {
+    display: block;
+    position: relative;
+    color: var(--dark-grayish-blue);
+}
+.qa {
+    border-bottom: 1px solid var(--light-grayish-blue);
+    cursor: pointer;
+    margin-top: 8px;
+    overflow: hidden;
+}
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    margin: 5px 0 15px 0;
+}
+.question:hover {
+    color: var(--soft-red);
+}
+.question h2 {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+ .active .answer{
+    max-height: 100%;
+}
+.active .question h2 {
+    font-weight: 700;
+}
+.active .question .arrow {
+    transform: rotate(180deg);
+}
+.question .arrow {
+    margin-right: 18px;
+}
+.answer p {
+    font-size: 14px;
+    margin: 0 0 20px 0;
+}
+
+@media screen and (max-width: 1125px) {
+    .content {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 765px){
+    .container {
+        display: flex;
+        flex-direction: column;
+        font-size: 14px;
+        width: 630px;
+        height: 70%;
+        margin-top: 30px;
+    }
+    .image-bg-pattern{
+        display: none;
+    }   
+    .image-bg-woman {
+        display: none;
+    }
+    .image-bg-box {
+        display: none;
+    }
+    .images {
+        display: flex;
+        justify-content: center;
+        height: 25%;
+    }
+    .image-bg-pattern2 {
+        display:block;
+        align-items: center;
+    }
+    .image-bg-woman2 {
+        display:block;
+        transform: translate(-15px, -108px);
+    }
+    .content {
+        margin: 0 auto;
+        width: 90%;
+        position: relative;
+    }
+    .title-content {
+        text-align: center;
+        margin-top: 14px;
+    }
+    .qa .question h2, .qa .answer p{
+        font-size: 14px;
+    }
+    .answer p {
+        margin: 0 0 10px 0;
+    }
+}
+
+@media screen and (max-width: 376px){
+    
+    .container {
+        font-size: 12px;
+        width: 330px;
+        height: 70%;
+        margin-top: 50px;
+    }
+    .questions {
+        width: 100%;
+    }
+    .qa .question h2, .qa .answer p{
+        font-size: 12px;
+    }
+    .question .arrow {
+        margin-right: 0;
+    }
+}
