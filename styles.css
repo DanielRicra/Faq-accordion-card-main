@@ -30,11 +30,11 @@ body {
 .attribution { 
     display: block;
     position: absolute;
-    font-size: 11px; 
+    font-size: 14px; 
     text-align: center; 
     bottom: 5px;
 }
-.attribution a { color: hsl(228, 45%, 44%); }
+.attribution a { color: #888; }
 
 /*===========================CONTAINER ===========================*/
 /*================================================================*/
